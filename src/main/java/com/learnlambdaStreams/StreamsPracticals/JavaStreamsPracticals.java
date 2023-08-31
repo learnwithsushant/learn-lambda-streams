@@ -1,12 +1,16 @@
 package com.learnlambdaStreams.StreamsPracticals;
 
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class JavaStreamsPracticals {
 
     public static void main(String[] args) {
         //intStreamDemo();
-        intStreamWithSkipDemo();
+        //intStreamWithSkipDemo();
+       // printSumInStream();
+
+        sortString();
     }
 
     public static void intStreamDemo(){
@@ -24,5 +28,18 @@ public class JavaStreamsPracticals {
                 forEach(x-> System.out.println(x));
         System.out.println();
 
+    }
+
+    public static void printSumInStream(){
+        System.out.println("Stream Demo");
+        System.out.println(IntStream.range(1,5).sum());
+    }
+
+    public static void sortString(){
+
+        Stream.of("Shivshakti","Pragyan","Vikram")
+                .sorted()
+                .findFirst()
+                .ifPresent(System.out::println);
     }
 }
